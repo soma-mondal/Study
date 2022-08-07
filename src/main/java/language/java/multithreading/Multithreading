@@ -1,0 +1,34 @@
+Multithreading:
+
+Responsiveness - concurrency
+Performance - Parallelism
+
+Thread contains - Stack, Instruction Pointer
+Threads share - Files, Heap
+
+Context Switch - The act of stopping one thread, scheduling it out and scheduling in another thread and starting it is called context switching.
+
+Thrashing - Spending more time in management than real work.
+
+Daemon Threads - Background threads that doesn't prevent the application from exiting if the main thread terminates. // thread.setDaemon(true)
+
+Latency - The time to completion of a task. Measured in time units.
+
+Throughput - The amount of tasks completed in a given time period. Measured in tasks/time unit.
+
+Theoretically #threads = #cores
+
+Deadlock - conditions
+    Mutual exclusion - Only one thread can have exclusive access to a resource.
+    Hold and wait - At least one thread is holding a resource and waiting for another resource.
+    Non preemptive allocation - A resource is released only after a thread is done using it.
+    Circular wait - A chain of at least two threads, each one is holding one resource and waiting for another resource.
+
+    Solution:
+        Avoid circular wait - Enforce a strict order in lock acquisition. Apply the locks in the shared resources in the same order.
+                              Easy to do with only small number of locks.
+
+        Deadlock detection - watchdog
+        Thread interruption - not possible with synchronized
+        tryLock operations - not possible with synchronized
+
